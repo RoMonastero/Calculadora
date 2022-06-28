@@ -22,24 +22,31 @@ function addoperator(operator) {
         if (result.textContent != "0" && !(result.textContent.endsWith('+') || result.textContent.endsWith('-') || result.textContent.endsWith('*') || result.textContent.endsWith('/'))) {
             result.innerText += operator
          } 
-    }
-    
+    } 
 }
 
 function addDot(){  
     if (result.textContent.length <= 19) {
-        result.innerText += '.'   
+        var numberList = result.textContent.split(/[-+*/]+/)
+        var lastNumber = numberList[numberList.length-1]
+        if (!lastNumber.includes('.')) {
+            if (lastNumber == '') {
+                result.innerText += '0.'  
+            } else {
+                result.innerText += '.'  
+            }
+             
+        }
+         
     }
-   
 }
 
 function calculate() {
     if (result.textContent.endsWith('+') || result.textContent.endsWith('-') || result.textContent.endsWith('*') || result.textContent.endsWith('/')) {
         alert("Não é possivel fazer uma conta com um operador como útlimo elemento")
     }else{
-        result.innerText = eval(result.textContent)
-    }
-    
+        result.innerText = eval(result.textContent)      
+    } 
 }
 
 function backSpace() {
