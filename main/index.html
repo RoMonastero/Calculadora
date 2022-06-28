@@ -14,36 +14,35 @@
 
     <section id="calculadora">
         <table>
-            <p>0</p>
+            <p id="result">0</p>
             <tr>
-                <td><button>C</button></td>
-                <td><button>←</button></td>
-                <td><button>%</button></td>
-                <td><button>÷</button></td>
+                <td colspan="2"><button style="width: 84px;" onclick="clean()">C</button></td>
+                <td><button onclick="backSpace()">←</button></td>
+                <td><button onclick="addoperator('/')">/</button></td>
             </tr>
             <tr>
-                <td><button>7</button></td>
-                <td><button>8</button></td>
-                <td><button>9</button></td>
-                <td><button>x</button></td>
+                <td><button onclick="addNumber('7')">7</button></td>
+                <td><button onclick="addNumber('8')">8</button></td>
+                <td><button onclick="addNumber('9')">9</button></td>
+                <td><button onclick="addoperator('*')">*</button></td>
             </tr>
             <tr>
-                <td><button>4</button></td>
-                <td><button>5</button></td>
-                <td><button>6</button></td>
-                <td><button>-</button></td>
+                <td><button onclick="addNumber('4')">4</button></td>
+                <td><button onclick="addNumber('5')">5</button></td>
+                <td><button onclick="addNumber('6')">6</button></td>
+                <td><button onclick="addoperator('-')">-</button></td>
             </tr>
             <tr>
-                <td><button>1</button></td>
-                <td><button>2</button></td>
-                <td><button>3</button></td>
-                <td><button>+</button></td>
+                <td><button onclick="addNumber('1')">1</button></td>
+                <td><button onclick="addNumber('2')">2</button></td>
+                <td><button onclick="addNumber('3')">3</button></td>
+                <td><button onclick="addoperator('+')">+</button></td>
             </tr>
             <tr>
-                <td><button>0</button></td>
-                <td><button>,</button></td>
+                <td><button onclick="addNumber('0')">0</button></td>
+                <td><button onclick="addDot()">.</button></td>
                 <td colspan="2"><button style="width: 84px
-                ;">=</button></td>
+                ;" onclick="calculate()">=</button></td>
                 
             </tr>
         </table>
